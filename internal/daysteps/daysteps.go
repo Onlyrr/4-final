@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"spentcalories"
+	"https://github.com/Onlyrr/4-final/internal/spentcalories"
 )
 
 const (
@@ -50,6 +50,9 @@ func DayActionInfo(data string, weight, height float64) string {
 	dist = float64(steps) * stepLength
 	var distKm float64
 	distKm = dist / float64(mInKm)
-	Calories := spentcalories.WalkingSpentCalories(steps, weight, height, durationWalk)
+	Calories, err := spentcalories.WalkingSpentCalories(steps, weight, height, durationWalk)
+	if err != nil {
+		return ""
+	}
 	return fmt.Sprintf("Количество шагов: %d.\nДистанция составила %.2f км.\nВы сожгли %.2f ккал .\n", steps, distKm, Calories)
 }
