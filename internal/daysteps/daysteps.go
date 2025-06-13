@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"https://github.com/Onlyrr/4-final/internal/spentcalories"
+	"github.com/Onlyrr/tracker/internal/spentcalories"
 )
 
 const (
